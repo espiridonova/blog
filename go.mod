@@ -2,7 +2,10 @@ module github.com/espiridonova/blog
 
 go 1.23.1
 
-require modernc.org/sqlite v1.37.0
+require (
+	github.com/sirupsen/logrus v1.9.3
+	modernc.org/sqlite v1.37.0
+)
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect

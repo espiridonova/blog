@@ -1,8 +1,10 @@
 package model
 
+import "time"
+
 type Article struct {
-	Id      int    `json:"id"`
-	Title   string `json:"title"`
-	Content string `json:"content"`
-	Created int64  `json:"created"`
+	ID      int64      `json:"id"`
+	Title   string     `json:"title,omitempty"`
+	Content string     `json:"content,omitempty"`
+	Created *time.Time `json:"created,omitempty"`
 }

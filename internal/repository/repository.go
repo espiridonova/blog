@@ -2,14 +2,14 @@ package repository
 
 import (
 	"database/sql"
+	"time"
 )
 
-// - создать в отдельном файле структуру для работы с БД (методы create, getByID, getList, delete, update)
 type DBArticle struct {
-	ID      int
+	ID      int64
 	Title   string
 	Content string
-	Created int64
+	Created *time.Time
 }
 
 type Repository struct {

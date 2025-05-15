@@ -1,24 +1,13 @@
 package handler
 
 import (
-	"github.com/espiridonova/blog/internal/repository"
-
-	"github.com/espiridonova/blog/internal/model"
+	servicepkg "github.com/espiridonova/blog/internal/service"
 )
 
 type Handler struct {
-	repo *repository.Repository
+	service *servicepkg.Service
 }
 
-func NewHandler(repo *repository.Repository) *Handler {
-	return &Handler{repo}
-}
-
-func convertToResp(article *repository.DBArticle) *model.Article {
-	return &model.Article{
-		Id:      article.ID,
-		Title:   article.Title,
-		Content: article.Content,
-		Created: article.Created,
-	}
+func NewHandler(service *servicepkg.Service) *Handler {
+	return &Handler{service: service}
 }

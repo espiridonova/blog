@@ -2,7 +2,7 @@ package repository
 
 import "database/sql"
 
-func (r *Repository) GetByID(id int) (*DBArticle, error) {
+func (r *Repository) GetByID(id int64) (*DBArticle, error) {
 	a := DBArticle{}
 	row := r.db.QueryRow(
 		`SELECT  id, title, content, created FROM article WHERE id = :id`,
