@@ -14,6 +14,7 @@ func (h *Handler) DeleteHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+
 	err = h.service.Delete(id)
 	if err != nil {
 		logrus.Errorf("failed delete article from DB: %s", err)
