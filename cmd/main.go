@@ -28,7 +28,6 @@ func main() {
 	http.HandleFunc("/create", handler.CreateHandler)
 	http.HandleFunc("/update", handler.UpdateHandler)
 	http.HandleFunc("/delete", handler.DeleteHandler)
-
 	err = http.ListenAndServe(":8080", nil)
 	if err != nil {
 		panic(err)
